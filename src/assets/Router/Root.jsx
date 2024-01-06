@@ -1,10 +1,13 @@
-import React from 'react';
+
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Root = () => {
     return (
+        <>
         <div>
-            hi iam from root
+            <Navbar></Navbar>
         </div>
+        </>
     );
 };
 
