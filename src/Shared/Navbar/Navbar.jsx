@@ -1,3 +1,4 @@
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -5,7 +6,7 @@ const Navbar = () => {
         <>
             {/* For lg device */}
             <section>
-                <nav className="lg:flex justify-between items-center my-[24px] mx-[72px] hidden ">
+                <nav className="md:flex justify-between items-center my-[24px] lg:mx-[72px] md:px-2 hidden ">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="163" height="24" viewBox="0 0 163 24" fill="none">
                             <g clip-path="url(#clip0_1_786)">
@@ -62,8 +63,79 @@ const Navbar = () => {
 
                     </div>
 
-                    <div>
-                        <p>Create account. It’s free!</p>
+                    <div >
+                        <p className="">Create account.<span onClick={() => document.getElementById('my_modal_1').showModal()} className="text-[#2F6CE5] font-semibold cursor-pointer"> It’s free!</span></p>
+
+                        <dialog id="my_modal_1" className="modal">
+                            <div className="bg-[#fff] w-[736px] h-[650px] rounded-md ">
+                                <div>
+                                    <h3 className="text-[#008A45] text-[14px] text-center bg-[#EFFFF4] p-3 rounded-md">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</h3>
+                                </div>
+
+                                <div className="flex justify-between mt-6 px-[36px] items-center">
+                                    <p className="text-[24px] font-semibold">Create Account</p>
+                                    <p className="text-[14px]">Already have an account?<span className="text-[#2F6CE5] font-semibold cursor-pointer"> Sign in!</span></p>
+                                </div>
+
+                                <div className="flex justify-between px-[36px] rounded-md mt-10 gap-5">
+
+                                    <div>
+                                        <div className="bg-gray-200  rounded-t-[10px]  p-5 space-y-3">
+                                            <div className="flex  p-2">
+                                                <input placeholder="First name " className="outline-none  bg-gray-200 text-black" type="text" value="" />
+                                                <div className="flex flex-row w-full">
+                                                    <div className="divider lg:divider-horizontal"></div>
+                                                </div>
+                                                <input placeholder="Last name" className="outline-none bg-gray-200" type="text" value="" />
+                                            </div>
+
+                                            <div>
+                                                <div className="flex flex-col -my-6">
+                                                    <div className="divider"></div>
+                                                </div>
+                                                <input placeholder="Email" className="outline-none  bg-gray-200 text-black p-2 w-full" type="email" value="" />
+                                            </div>
+                                            <div>
+                                                <div className="flex flex-col -my-6">
+                                                    <div className="divider"></div>
+                                                </div>
+                                                <input placeholder="Password" className="outline-none  bg-gray-200 text-black p-2 w-full" type="password" value="" />
+                                            </div>
+                                            <div>
+                                                <div className="flex flex-col -my-6">
+                                                    <div className="divider"></div>
+                                                </div>
+                                                <input placeholder="Confirm Password" className="outline-none bg-gray-200  text-black p-2 w-full " type="password" value="" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button className="btn btn-primary rounded-full w-full mt-4">Create Account</button>
+                                        </div>
+
+                                        <div>
+                                            <div className="w-2/3 mx-auto mt-4">
+                                                <p className="flex items-center justify-center gap-3 border p-3 mb-3 cursor-pointer"><FaFacebook></FaFacebook> Sign up with Facebook</p>
+                                                <p className="flex items-center justify-center gap-3 border p-3 cursor-pointer"><FaGoogle></FaGoogle> Sign up with Google</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div>
+                                        <img src="https://www.sehat.com/sht-new-img/new/login-new.png" alt="" />
+                                    </div>
+
+                                </div>
+                                <p className="text-center my-5 opacity-40">By signing up, you agree to our <span className="font-semibold cursor-pointer">Terms & conditions</span>,<span className="font-semibold cursor-pointer"> Privacy policy</span></p>
+                            </div>
+                            <div className="modal-action">
+                            <form method="dialog">
+                                {/* if there is a button in form, it will close the modal */}
+                                <button className="btn text-white rounded-full"><span className="text-black font-semibold p-2">X</span></button>
+                            </form>
+                        </div>
+                        </dialog>
+                        
                     </div>
                 </nav>
             </section>
@@ -72,7 +144,7 @@ const Navbar = () => {
             {/* For small device */}
 
             <section>
-                <nav className="flex gap-[200px] items-center justify-between mt-[16px] mx-[16px] lg:hidden fixed z-10 ">
+                <nav className="flex gap-[200px] items-center justify-between mt-[16px] mx-[16px] md:hidden fixed z-10 ">
 
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -81,7 +153,7 @@ const Navbar = () => {
                     </div>
 
                     <div><button className="btn btn-outline text-white ">Join Group</button></div>
-                </nav> 
+                </nav>
 
             </section>
         </>
